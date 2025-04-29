@@ -1,0 +1,161 @@
+.exercise-detail-container {
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.exercise-detail-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.exercise-header {
+  padding: 20px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #eee;
+}
+
+.exercise-header h2 {
+  margin: 0 0 10px 0;
+  color: #333;
+}
+
+.exercise-meta {
+  display: flex;
+  gap: 10px;
+}
+
+.difficulty-badge,
+.type-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.difficulty-badge {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.type-badge {
+  background-color: #f3e5f5;
+  color: #7b1fa2;
+}
+
+.exercise-media {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.exercise-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.exercise-content {
+  padding: 20px;
+}
+
+.exercise-content section {
+  margin-bottom: 30px;
+}
+
+.exercise-content h3 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.muscle-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.muscle-tag {
+  background: #f1f8e9;
+  color: #558b2f;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 0.9rem;
+}
+
+.instruction-steps {
+  padding-left: 20px;
+}
+
+.instruction-steps li {
+  margin-bottom: 12px;
+  line-height: 1.5;
+  color: #444;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.detail-item {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.detail-label {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+.detail-value {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.equipment-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.equipment-item {
+  background: #fff3e0;
+  color: #e65100;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 0.9rem;
+}
+
+.error-message {
+  text-align: center;
+  padding: 40px;
+  background: #ffebee;
+  color: #c62828;
+  border-radius: 8px;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .exercise-media {
+    height: 300px;
+  }
+  
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .exercise-meta {
+    flex-direction: column;
+  }
+} 

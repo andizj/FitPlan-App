@@ -1,0 +1,344 @@
+.profile-setup-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #6B46C1 0%, #9F7AEA 100%);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.setup-progress {
+  width: 100%;
+  max-width: 400px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  margin-bottom: 30px;
+}
+
+.progress-bar {
+  height: 100%;
+  background: #E9D8FD;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.setup-step {
+  width: 100%;
+  max-width: 400px;
+  background: #1A1A1A;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+.setup-step h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.setup-step p {
+  color: #A0AEC0;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+
+/* Gender Selection */
+.gender-options {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.gender-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #2D3748;
+  border: none;
+  border-radius: 15px;
+  padding: 20px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 120px;
+}
+
+.gender-button.selected {
+  background: #9F7AEA;
+}
+
+.gender-icon {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+/* Height Selection */
+.height-selector {
+  width: 100%;
+  max-width: 400px;
+  margin: 40px auto;
+  position: relative;
+}
+
+.height-value {
+  text-align: center;
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #9F7AEA;
+}
+
+.height-value span {
+  font-size: 24px;
+  margin-left: 5px;
+  opacity: 0.7;
+}
+
+.height-scale {
+  position: relative;
+  height: 300px;
+  margin: 0 40px;
+  display: flex;
+  align-items: center;
+  touch-action: none;
+  cursor: pointer;
+}
+
+.height-bar {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 100%;
+  background: rgba(159, 122, 234, 0.2);
+  border-radius: 20px;
+}
+
+.height-indicator {
+  position: absolute;
+  right: -15px;
+  width: 30px;
+  height: 30px;
+  background: #9F7AEA;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  cursor: grab;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.height-indicator:hover {
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.height-indicator:active {
+  cursor: grabbing;
+  transform: translateY(-50%) scale(0.95);
+}
+
+.height-indicator::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 8px solid #fff;
+}
+
+.height-marks {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+}
+
+.height-marks span {
+  position: absolute;
+  left: -30px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.height-marks span.active {
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Entferne die alten Button-Stile */
+.height-controls {
+  display: none;
+}
+
+/* Mobile Anpassungen */
+@media (max-width: 480px) {
+  .setup-step {
+    padding: 20px;
+  }
+
+  .gender-button {
+    width: 100px;
+    padding: 15px;
+  }
+
+  .height-value {
+    font-size: 36px;
+  }
+
+  .height-value span {
+    font-size: 18px;
+  }
+
+  .height-scale {
+    margin: 0 20px;
+  }
+  
+  .height-bar {
+    width: 30px;
+  }
+  
+  .height-indicator {
+    width: 24px;
+    height: 24px;
+    right: -12px;
+  }
+  
+  .height-indicator::after {
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 6px solid #fff;
+  }
+  
+  .height-marks span {
+    font-size: 14px;
+    left: -25px;
+  }
+}
+
+/* Activity Level */
+.activity-options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.activity-button {
+  background: #2D3748;
+  border: none;
+  border-radius: 12px;
+  padding: 15px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.activity-button.selected {
+  background: #9F7AEA;
+}
+
+/* Final Form */
+.final-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  color: #A0AEC0;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  background: #2D3748;
+  border: 1px solid #4A5568;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #9F7AEA;
+}
+
+.form-group select option {
+  background: #2D3748;
+  color: white;
+}
+
+/* Error Message */
+.error-message {
+  background: #FED7D7;
+  color: #C53030;
+  padding: 12px;
+  border-radius: 8px;
+  margin: 20px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Buttons */
+.continue-button,
+.submit-button {
+  width: 100%;
+  background: #9F7AEA;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 30px;
+  transition: all 0.3s ease;
+}
+
+.continue-button:hover,
+.submit-button:hover {
+  background: #805AD5;
+}
+
+.submit-button:disabled {
+  background: #4A5568;
+  cursor: not-allowed;
+}
+
+.continue-button {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+.continue-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+} 

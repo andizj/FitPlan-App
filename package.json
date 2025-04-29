@@ -1,0 +1,29 @@
+{
+  "name": "fitplan",
+  "version": "1.0.0",
+  "description": "Fitness-Trainingsplaner",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd fitplan-frontend && npm start",
+    "install": "cd fitplan-frontend && npm install",
+    "build": "cd fitplan-frontend && npm run build"
+  },
+  "keywords": [
+    "fitness",
+    "workout",
+    "training",
+    "plan"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.26.10",
+    "@babel/plugin-transform-runtime": "^7.26.10",
+    "@babel/preset-env": "^7.26.9",
+    "@babel/preset-react": "^7.26.3",
+    "@babel/runtime": "^7.27.0",
+    "babel-loader": "^10.0.0",
+    "webpack": "^5.99.5",
+    "webpack-dev-server": "^5.2.1"
+  }
+}

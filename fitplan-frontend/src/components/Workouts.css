@@ -1,0 +1,164 @@
+.workouts-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.workouts-container h1 {
+  color: white;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.workouts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.workout-card {
+  background: #1A1A1A;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.workout-card:hover {
+  transform: translateY(-5px);
+}
+
+.workout-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.workout-header h3 {
+  color: white;
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.workout-type {
+  background: #2D3748;
+  color: #9F7AEA;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.workout-info {
+  margin-bottom: 20px;
+}
+
+.workout-info p {
+  color: #A0AEC0;
+  margin: 0 0 15px 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.workout-meta {
+  display: flex;
+  gap: 15px;
+}
+
+.workout-meta span {
+  color: #A0AEC0;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.workout-footer {
+  display: flex;
+  gap: 10px;
+}
+
+.workout-footer button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.start-workout {
+  background: #9F7AEA;
+  color: white;
+}
+
+.start-workout:hover {
+  background: #805AD5;
+}
+
+.edit-workout {
+  background: #2D3748;
+  color: white;
+}
+
+.edit-workout:hover {
+  background: #4A5568;
+}
+
+.no-workouts {
+  text-align: center;
+  padding: 40px;
+  background: #1A1A1A;
+  border-radius: 12px;
+  color: #A0AEC0;
+}
+
+.no-workouts p {
+  margin-bottom: 20px;
+}
+
+.create-workout-button {
+  background: #9F7AEA;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.create-workout-button:hover {
+  background: #805AD5;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: #9F7AEA;
+  font-size: 1.2rem;
+}
+
+.error {
+  text-align: center;
+  padding: 20px;
+  background: #2D3748;
+  color: #FC8181;
+  border-radius: 8px;
+  margin: 20px;
+}
+
+@media (max-width: 768px) {
+  .workouts-container {
+    padding: 15px;
+  }
+
+  .workouts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .workout-card {
+    padding: 15px;
+  }
+} 
