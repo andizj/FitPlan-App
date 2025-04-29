@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getAuth } from 'firebase/auth';
-import { getFirestore, doc, updateDoc, getDoc } from 'firebase/firestore';
+import { getFirestore, doc, updateDoc, getDoc, setDoc } from 'firebase/firestore';
 import './ProfileSetup.css';
 
 const ProfileSetup = () => {
@@ -139,8 +139,6 @@ const ProfileSetup = () => {
 
       const db = getFirestore();
       const userDocRef = doc(db, 'users', user.uid);
-
-      // Erstelle das Benutzerdaten-Objekt
       const userData = {
         ...formData,
         setupCompleted: true,
@@ -148,14 +146,15 @@ const ProfileSetup = () => {
       };
 
       try {
-        // Aktualisiere das Dokument
-        await updateDoc(userDocRef, userData);
-        
+        const userDocSnap = await getDoc(userDocRef);
+        if (userDocSnap.exists()) {
+          await updateDoc(userDocRef, userData);
+        } else {
+          await setDoc(userDocRef, userData);
+        }
         // Überprüfe sofort, ob die Daten gespeichert wurden
         const updatedDoc = await getDoc(userDocRef);
-        
         if (updatedDoc.exists() && updatedDoc.data().setupCompleted) {
-          // Erzwinge einen Reload der Seite und navigiere zum Dashboard
           window.location.href = '/dashboard';
         } else {
           throw new Error('Setup-Status konnte nicht aktualisiert werden');
@@ -310,8 +309,8 @@ const ProfileSetup = () => {
                   onChange={(e) => setFormData(prev => ({ ...prev, goal: e.target.value }))}
                 >
                   <option value="">Wähle dein Ziel</option>
-                  <option value="weight_loss">Gewicht verlieren</option>
                   <option value="muscle_gain">Muskelaufbau</option>
+                  <option value="weight_loss">Gewicht verlieren</option>
                   <option value="endurance">Ausdauer verbessern</option>
                 </select>
               </div>

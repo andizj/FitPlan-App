@@ -34,9 +34,11 @@ const Exercises = () => {
   }, []);
 
   const filteredExercises = exercises.filter(exercise => {
+    const name = exercise.name || '';
+    const description = exercise.description || '';
     const matchesFilter = filter === 'all' || exercise.category === filter;
-    const matchesSearch = exercise.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         exercise.description.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesSearch = name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         description.toLowerCase().includes(searchTerm.toLowerCase());
     return matchesFilter && matchesSearch;
   });
 
